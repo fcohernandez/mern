@@ -61,7 +61,7 @@ app.put('/libro/:codigo', function(req, res) {
     let codigo = req.params.codigo;
     let body = req.body;
 
-    Libro.findOneAndUpdate({'codigo': codigo}, body, (err, libroDB)=> {
+    Libro.findOneAndUpdate({'_id': codigo}, body, (err, libroDB)=> {
         if(err){
             return res.status(400).json({
                 ok: false,
